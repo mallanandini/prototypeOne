@@ -50,5 +50,26 @@
     "title": "Module 4: Classes and Your First Project",
     "description": "Learn the basics of classes, test your code, and build a small expense tracker.",
     "order": 4
+  },
+  {
+    "id": "mod-mahoraga-coder-01",
+    "courseId": "course-mahoraga-coder-c-python-2026",
+    "title": "Welcome and Development Setup",
+    "description": "Meet the channel, get started with coding, and install the C and Python tools used in the course.",
+    "order": 1
+  },
+  {
+    "id": "mod-mahoraga-coder-02",
+    "courseId": "course-mahoraga-coder-c-python-2026",
+    "title": "Programming Basics and Practice",
+    "description": "Follow an introductory C and Python lesson, then practice a simple even-or-odd program.",
+    "order": 2
+  },
+  {
+    "id": "mod-mahoraga-coder-03",
+    "courseId": "course-mahoraga-coder-c-python-2026",
+    "title": "Python Tools and GitHub",
+    "description": "Set up PyCharm, pip, and Git, then learn how to publish a project to GitHub.",
+    "order": 3
   }
 ]

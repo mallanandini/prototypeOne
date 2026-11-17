@@ -67,5 +67,27 @@
     "rating": 0,
     "reviewsCount": 0,
     "createdAt": "2026-11-16T00:00:00.000Z"
+  },
+  {
+    "id": "course-mahoraga-coder-c-python-2026",
+    "title": "C and Python Programming: Beginner Foundations",
+    "shortDescription": "Start coding with C and Python through beginner lessons from Mahoraga Coder.",
+    "description": "A beginner course built around public video lessons from the Mahoraga Coder YouTube channel. Get oriented, set up C and Python tools, learn introductory programming concepts, practice an even-or-odd program, and finish by learning a Python and GitHub workflow. Videos remain hosted by their creator and play from YouTube.",
+    "difficulty": "Beginner",
+    "estimatedDuration": "2 hours",
+    "thumbnail": "https://i.ytimg.com/vi/H_jUDuBbXKc/hqdefault.jpg",
+    "banner": "https://i.ytimg.com/vi/uqZN0nXX-h0/hqdefault.jpg",
+    "instructorId": "trainer-1",
+    "instructorName": "Dr. Sarah Mitchell",
+    "category": "Programming",
+    "requirements": ["A computer", "Internet access to watch the linked YouTube lessons"],
+    "prerequisites": [],
+    "skillsCovered": ["C and Python development setup", "Programming fundamentals", "Variables and basic logic", "Even-or-odd conditionals", "PyCharm and pip", "Git and GitHub basics"],
+    "tags": ["C", "Python", "beginner", "programming", "GitHub"],
+    "status": "published",
+    "isFeatured": false,
+    "rating": 0,
+    "reviewsCount": 0,
+    "createdAt": "2026-11-17T00:00:00.000Z"
   }
 ]
