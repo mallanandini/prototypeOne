@@ -80,7 +80,7 @@ export function HomeNavbar({ onScrollTo }: HomeNavbarProps) {
           : "bg-white dark:bg-[#0B1120] border-slate-200/60 dark:border-[#263449] py-2.5"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-[1800px] mx-auto px-3 sm:px-5 2xl:px-8">
         <div className="flex items-center justify-between gap-3 2xl:gap-4 h-11 sm:h-12 min-w-0">
           {/* Brand Logo & Identification */}
           <Link 
@@ -96,7 +96,7 @@ export function HomeNavbar({ onScrollTo }: HomeNavbarProps) {
                 style={{ filter: "none", mixBlendMode: "normal", opacity: 1 }}
               />
             </div>
-            <div className="flex flex-col">
+            <div className="hidden min-[400px]:flex flex-col">
               <span className="font-extrabold text-[14px] 2xl:text-[15.5px] tracking-tight text-slate-900 dark:text-[#F1F5F9] leading-tight">
                 MR TECHNOLOGIES
               </span>
@@ -110,7 +110,7 @@ export function HomeNavbar({ onScrollTo }: HomeNavbarProps) {
           {/* Desktop Navigation Links — Centered, Evenly Spaced & Clean Baseline Styling */}
           <nav 
             aria-label="Main Navigation"
-            className="hidden xl:flex items-center gap-0.5 2xl:gap-1.5 text-[12.5px] 2xl:text-[13.5px] font-medium"
+            className="home-navbar-desktop-nav items-center gap-0.5 2xl:gap-1 text-[12px] 2xl:text-[12.5px] font-medium"
           >
             {navItems.map((item) => {
               const isActive = activeSection === item.sectionId;
@@ -118,7 +118,7 @@ export function HomeNavbar({ onScrollTo }: HomeNavbarProps) {
                 <button
                   key={item.sectionId}
                   onClick={() => handleNavClick(item.sectionId)}
-                  className={`relative px-2 2xl:px-2.5 py-1.5 rounded-md transition-colors cursor-pointer whitespace-nowrap leading-none ${
+                  className={`relative px-1.5 2xl:px-2 py-1.5 rounded-md transition-colors cursor-pointer whitespace-nowrap leading-none ${
                     isActive 
                       ? "text-emerald-700 dark:text-emerald-400 font-semibold after:absolute after:bottom-0 after:left-2 after:right-2 after:h-[2px] after:bg-emerald-600 dark:after:bg-emerald-400 after:rounded-full" 
                       : "text-slate-600 hover:text-slate-950 dark:text-slate-300 dark:hover:text-white"
@@ -132,7 +132,7 @@ export function HomeNavbar({ onScrollTo }: HomeNavbarProps) {
 
             <Link
               to="/verify-certificate"
-              className="inline-flex items-center gap-1.5 px-2 2xl:px-2.5 py-1.5 rounded-md text-slate-600 hover:text-emerald-700 dark:text-slate-300 dark:hover:text-emerald-400 transition-colors whitespace-nowrap leading-none font-medium"
+              className="inline-flex items-center gap-1 px-1.5 2xl:px-2 py-1.5 rounded-md text-slate-600 hover:text-emerald-700 dark:text-slate-300 dark:hover:text-emerald-400 transition-colors whitespace-nowrap leading-none font-medium"
               title="Official Public Credential Verification"
             >
               <ShieldCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
@@ -142,7 +142,7 @@ export function HomeNavbar({ onScrollTo }: HomeNavbarProps) {
           </nav>
 
           {/* Desktop Actions: Compact Theme Toggle + Fully Visible Student Login / Dashboard */}
-          <div className="hidden xl:flex items-center gap-2 2xl:gap-2.5 shrink-0">
+          <div className="home-navbar-desktop-actions items-center gap-2 2xl:gap-2.5 shrink-0">
             <ThemeQuickControls compact={true} />
 
             {dashboardTarget ? (
@@ -171,13 +171,36 @@ export function HomeNavbar({ onScrollTo }: HomeNavbarProps) {
           </div>
 
           {/* Mobile/Tablet Controls (Theme Toggle + Hamburger Menu Button) */}
-          <div className="flex xl:hidden items-center gap-2 shrink-0">
-            <ThemeQuickControls compact={true} />
+          <div className="home-navbar-mobile-controls items-center gap-2 shrink-0">
+            {dashboardTarget ? (
+              <Link
+                to={dashboardTarget.path}
+                className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-emerald-600 px-2.5 sm:px-3 h-9 text-white text-xs font-semibold shadow-xs hover:bg-emerald-700 transition whitespace-nowrap"
+                aria-label={dashboardTarget.label}
+                title={dashboardTarget.label}
+              >
+                <UserCheck className="w-4 h-4 shrink-0" />
+                <span className="hidden min-[400px]:inline">{dashboardTarget.shortLabel}</span>
+              </Link>
+            ) : (
+              <Link
+                to="/student/login"
+                id="header-student-login-btn-compact"
+                className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-emerald-600 px-2.5 sm:px-3 h-9 text-white text-xs font-semibold shadow-xs hover:bg-emerald-700 transition whitespace-nowrap"
+                aria-label="Student Login"
+                title="Student Login"
+              >
+                <GraduationCap className="w-4 h-4 text-emerald-100 shrink-0" />
+                <span className="hidden min-[400px]:inline">Student Login</span>
+              </Link>
+            )}
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-xl border border-slate-200 dark:border-[#263449] bg-white dark:bg-[#111C30] text-slate-700 dark:text-[#F1F5F9] hover:bg-slate-100 dark:hover:bg-[#16243D] transition focus:outline-none focus:ring-2 focus:ring-emerald-500 cursor-pointer"
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="home-navbar-side-drawer"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -187,10 +210,18 @@ export function HomeNavbar({ onScrollTo }: HomeNavbarProps) {
 
       {/* Mobile/Tablet Drawer Navigation */}
       {mobileMenuOpen && (
-        <div 
-          aria-label="Mobile navigation"
-          className="xl:hidden border-t border-slate-200 dark:border-[#263449] bg-white dark:bg-[#0B1120] px-4 pt-3 pb-6 space-y-3 animate-in slide-in-from-top-2 duration-200 shadow-xl"
-        >
+        <div className="home-navbar-drawer-layer">
+          <button
+            type="button"
+            className="home-navbar-drawer-backdrop"
+            onClick={() => setMobileMenuOpen(false)}
+            aria-label="Close navigation menu"
+          />
+          <aside
+            id="home-navbar-side-drawer"
+            aria-label="Mobile navigation"
+            className="home-navbar-side-drawer animate-in slide-in-from-left-4 duration-200"
+          >
           <div className="flex items-center justify-between pb-2 border-b border-slate-100 dark:border-[#263449]">
             <span className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-[#A8B5C7]">
               Navigation Menu
@@ -235,31 +266,8 @@ export function HomeNavbar({ onScrollTo }: HomeNavbarProps) {
               <span className="text-xs font-medium text-slate-600 dark:text-[#A8B5C7]">Theme Appearance</span>
               <ThemeQuickControls />
             </div>
-
-            {dashboardTarget ? (
-              <Link
-                to={dashboardTarget.path}
-                id="drawer-student-dashboard-btn"
-                onClick={() => setMobileMenuOpen(false)}
-                className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-md transition"
-              >
-                <UserCheck className="w-4 h-4" />
-                <span>Go to {dashboardTarget.label}</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            ) : (
-              <Link
-                to="/student/login"
-                id="drawer-student-login-btn"
-                onClick={() => setMobileMenuOpen(false)}
-                className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-md transition"
-              >
-                <GraduationCap className="w-4 h-4 text-emerald-100" />
-                <span>Student Login — Access Portal</span>
-                <ArrowRight className="w-4 h-4 ml-0.5" />
-              </Link>
-            )}
           </div>
+          </aside>
         </div>
       )}
     </header>

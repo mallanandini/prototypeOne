@@ -212,5 +212,71 @@
     "order": 3,
     "durationMinutes": 60,
     "content": "## Put the pieces together\n\nBuild a command-line expense tracker that lets a user record a description and amount, list saved expenses, and show the total. Start with an in-memory list of dictionaries, then add file storage.\n\n### Suggested plan\n\n1. Create a list named `expenses`. Store each entry as a dictionary with `description` and `amount`.\n2. Write `add_expense(expenses, description, amount)` and reject amounts that are zero or negative.\n3. Write `calculate_total(expenses)` and `show_expenses(expenses)` as separate functions.\n4. Add a loop with menu choices to add, list, and quit. Handle invalid menu choices and non-numeric amounts.\n5. Save entries to a text or CSV file with a `with` block, then load them when the program starts.\n6. Test an empty list, one expense, several expenses, and invalid input.\n\n### Stretch goals\n\nAdd categories, filter expenses by category, or display the largest expense. Keep each feature small and test it before moving on."
+  },
+  {
+    "id": "mahoraga-coder-lesson-01",
+    "moduleId": "mod-mahoraga-coder-01",
+    "courseId": "course-mahoraga-coder-c-python-2026",
+    "title": "Channel Welcome: The Start of Mahoraga Coder",
+    "type": "video",
+    "videoUrl": "https://www.youtube.com/watch?v=_Qaa-NVpZJ0",
+    "order": 1,
+    "durationMinutes": 1,
+    "content": "## Welcome\n\nWatch the creator's short channel introduction. Then preview the course path: prepare your tools, learn introductory C and Python, practice a small logic problem, and finish with a GitHub workflow.\n\n**Source:** Mahoraga Coder on YouTube."
+  },
+  {
+    "id": "mahoraga-coder-lesson-02",
+    "moduleId": "mod-mahoraga-coder-01",
+    "courseId": "course-mahoraga-coder-c-python-2026",
+    "title": "Day 0: Learning to Code",
+    "type": "video",
+    "videoUrl": "https://www.youtube.com/watch?v=H_jUDuBbXKc",
+    "order": 2,
+    "durationMinutes": 11,
+    "content": "## Before you code\n\nWatch the creator's Day 0 introduction. Write down one reason you want to learn programming and one small problem you would like a program to solve. Keep that goal in mind as you follow the later examples.\n\n**Source:** Mahoraga Coder on YouTube."
+  },
+  {
+    "id": "mahoraga-coder-lesson-03",
+    "moduleId": "mod-mahoraga-coder-01",
+    "courseId": "course-mahoraga-coder-c-python-2026",
+    "title": "Install C and Python Tools (Episode 1)",
+    "type": "video",
+    "videoUrl": "https://www.youtube.com/watch?v=wnFqKWbp770",
+    "order": 3,
+    "durationMinutes": 17,
+    "content": "## Prepare your coding environment\n\nFollow the installation walkthrough for the C and Python tools shown in the lesson. When finished, open each environment and confirm you can create or run a starter program. Installation screens can change over time, so use the current official download pages if a screen differs.\n\n**Source:** Mahoraga Coder on YouTube."
+  },
+  {
+    "id": "mahoraga-coder-lesson-04",
+    "moduleId": "mod-mahoraga-coder-02",
+    "courseId": "course-mahoraga-coder-c-python-2026",
+    "title": "Introduction to Coding with C and Python (Episode 2)",
+    "type": "video",
+    "videoUrl": "https://www.youtube.com/watch?v=uqZN0nXX-h0",
+    "order": 1,
+    "durationMinutes": 32,
+    "content": "## First programming concepts\n\nWatch the introductory C and Python examples. Pause to type the examples yourself, compare the syntax between the languages, and note what each statement does.\n\n**Practice:** Change one value in each example, run the program again, and describe what changed.\n\n**Source:** Mahoraga Coder on YouTube."
+  },
+  {
+    "id": "mahoraga-coder-lesson-05",
+    "moduleId": "mod-mahoraga-coder-02",
+    "courseId": "course-mahoraga-coder-c-python-2026",
+    "title": "Even or Odd in C and Python",
+    "type": "video",
+    "videoUrl": "https://www.youtube.com/watch?v=RCLQGJbiQJk",
+    "order": 2,
+    "durationMinutes": 15,
+    "content": "## Practice conditionals and the remainder operator\n\nFollow the creator's even-or-odd examples in C and Python, including the approaches with and without `%`.\n\n**Practice:** Write the program from memory, test it with `0`, a positive even number, a positive odd number, and a negative number, then explain why each result is correct.\n\n**Source:** Mahoraga Coder on YouTube."
+  },
+  {
+    "id": "mahoraga-coder-lesson-06",
+    "moduleId": "mod-mahoraga-coder-03",
+    "courseId": "course-mahoraga-coder-c-python-2026",
+    "title": "PyCharm, pip, Git, and GitHub",
+    "type": "video",
+    "videoUrl": "https://www.youtube.com/watch?v=ZPJmV_Ni5PM",
+    "order": 1,
+    "durationMinutes": 30,
+    "content": "## Set up a Python project and share it\n\nFollow the walkthrough for PyCharm, pip, Git, and pushing a project to GitHub. Check each command before running it and make sure you understand which folder it affects.\n\n**Practice:** Create a small Python file, initialize a Git repository, make one commit, and verify the project appears in your GitHub repository. Never place passwords, API keys, or other secrets in a public repository.\n\n**Source:** Mahoraga Coder on YouTube."
   }
 ]
